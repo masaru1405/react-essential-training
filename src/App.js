@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import SkiDayCount from './components/SkiDayCount';
+import SkiDayList from './components/SkiDayList'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SkiDayCount total={25} />
+      <SkiDayList 
+        days = {
+          [
+            {resort: 'Squaw Valley', date: new Date("5/12/2021"), powder: true, backcountry: false},
+            {resort: 'Kirkwood', date: new Date("5/25/2021"), powder: false, backcountry: false},
+            {resort: 'Mt. Tallac', date: new Date("5/12/2021"), powder: false, backcountry: true},
+          ]
+        }
+      />
     </div>
   );
 }
